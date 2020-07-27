@@ -14,6 +14,7 @@
 		F41C98D524C8875E00B6B527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41C98D424C8875E00B6B527 /* Assets.xcassets */; };
 		F41C98D824C8875E00B6B527 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41C98D624C8875E00B6B527 /* LaunchScreen.storyboard */; };
 		F41C98DB24C8875E00B6B527 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98DA24C8875E00B6B527 /* main.m */; };
+		F41C98E724CF1F3200B6B527 /* Dmoe1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98E624CF1F3200B6B527 /* Dmoe1ViewController.m */; };
 		FF7AD58424CBFE8500B1B23B /* jj.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF7AD58324CBFE8500B1B23B /* jj.jpg */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,8 @@
 		F41C98D724C8875E00B6B527 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F41C98D924C8875E00B6B527 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F41C98DA24C8875E00B6B527 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F41C98E524CF1F3200B6B527 /* Dmoe1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dmoe1ViewController.h; sourceTree = "<group>"; };
+		F41C98E624CF1F3200B6B527 /* Dmoe1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dmoe1ViewController.m; sourceTree = "<group>"; };
 		FF7AD58324CBFE8500B1B23B /* jj.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jj.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +78,8 @@
 				F41C98D624C8875E00B6B527 /* LaunchScreen.storyboard */,
 				F41C98D924C8875E00B6B527 /* Info.plist */,
 				F41C98DA24C8875E00B6B527 /* main.m */,
+				F41C98E524CF1F3200B6B527 /* Dmoe1ViewController.h */,
+				F41C98E624CF1F3200B6B527 /* Dmoe1ViewController.m */,
 			);
 			path = OpenGL_ES_Demos;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F41C98E724CF1F3200B6B527 /* Dmoe1ViewController.m in Sources */,
 				F41C98D024C8875A00B6B527 /* ViewController.m in Sources */,
 				F41C98CA24C8875A00B6B527 /* AppDelegate.m in Sources */,
 				F41C98DB24C8875E00B6B527 /* main.m in Sources */,
