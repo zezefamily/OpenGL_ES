@@ -36,8 +36,17 @@ static NSInteger const kCoorCount = 36;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor yellowColor];
+    [self loadEGL];
+    [self addDisplayLink];
 }
 
+- (void)addDisplayLink
+{
+    self.angle = 0;
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
+    [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+
+}
 - (void)loadEGL
 {
     //创建上下文
@@ -75,8 +84,53 @@ static NSInteger const kCoorCount = 36;
     //构造顶点数据
     self.vertices = malloc(sizeof(ZZVertex) * kCoorCount);
     
-    self.vertices[0] = (ZZVertex){{-0.5,0.5,0.5},{0,1},{0,0,1}};
-    // ......
+    // 前面
+    self.vertices[0] = (ZZVertex){{-0.5, 0.5, 0.5}, {0, 1}, {0, 0, 1}};
+    self.vertices[1] = (ZZVertex){{-0.5, -0.5, 0.5}, {0, 0}, {0, 0, 1}};
+    self.vertices[2] = (ZZVertex){{0.5, 0.5, 0.5}, {1, 1}, {0, 0, 1}};
+    self.vertices[3] = (ZZVertex){{-0.5, -0.5, 0.5}, {0, 0}, {0, 0, 1}};
+    self.vertices[4] = (ZZVertex){{0.5, 0.5, 0.5}, {1, 1}, {0, 0, 1}};
+    self.vertices[5] = (ZZVertex){{0.5, -0.5, 0.5}, {1, 0}, {0, 0, 1}};
+    
+    // 上面
+    self.vertices[6] = (ZZVertex){{0.5, 0.5, 0.5}, {1, 1}, {0, 1, 0}};
+    self.vertices[7] = (ZZVertex){{-0.5, 0.5, 0.5}, {0, 1}, {0, 1, 0}};
+    self.vertices[8] = (ZZVertex){{0.5, 0.5, -0.5}, {1, 0}, {0, 1, 0}};
+    self.vertices[9] = (ZZVertex){{-0.5, 0.5, 0.5}, {0, 1}, {0, 1, 0}};
+    self.vertices[10] = (ZZVertex){{0.5, 0.5, -0.5}, {1, 0}, {0, 1, 0}};
+    self.vertices[11] = (ZZVertex){{-0.5, 0.5, -0.5}, {0, 0}, {0, 1, 0}};
+    
+    // 下面
+    self.vertices[12] = (ZZVertex){{0.5, -0.5, 0.5}, {1, 1}, {0, -1, 0}};
+    self.vertices[13] = (ZZVertex){{-0.5, -0.5, 0.5}, {0, 1}, {0, -1, 0}};
+    self.vertices[14] = (ZZVertex){{0.5, -0.5, -0.5}, {1, 0}, {0, -1, 0}};
+    self.vertices[15] = (ZZVertex){{-0.5, -0.5, 0.5}, {0, 1}, {0, -1, 0}};
+    self.vertices[16] = (ZZVertex){{0.5, -0.5, -0.5}, {1, 0}, {0, -1, 0}};
+    self.vertices[17] = (ZZVertex){{-0.5, -0.5, -0.5}, {0, 0}, {0, -1, 0}};
+    
+    // 左面
+    self.vertices[18] = (ZZVertex){{-0.5, 0.5, 0.5}, {1, 1}, {-1, 0, 0}};
+    self.vertices[19] = (ZZVertex){{-0.5, -0.5, 0.5}, {0, 1}, {-1, 0, 0}};
+    self.vertices[20] = (ZZVertex){{-0.5, 0.5, -0.5}, {1, 0}, {-1, 0, 0}};
+    self.vertices[21] = (ZZVertex){{-0.5, -0.5, 0.5}, {0, 1}, {-1, 0, 0}};
+    self.vertices[22] = (ZZVertex){{-0.5, 0.5, -0.5}, {1, 0}, {-1, 0, 0}};
+    self.vertices[23] = (ZZVertex){{-0.5, -0.5, -0.5}, {0, 0}, {-1, 0, 0}};
+    
+    // 右面
+    self.vertices[24] = (ZZVertex){{0.5, 0.5, 0.5}, {1, 1}, {1, 0, 0}};
+    self.vertices[25] = (ZZVertex){{0.5, -0.5, 0.5}, {0, 1}, {1, 0, 0}};
+    self.vertices[26] = (ZZVertex){{0.5, 0.5, -0.5}, {1, 0}, {1, 0, 0}};
+    self.vertices[27] = (ZZVertex){{0.5, -0.5, 0.5}, {0, 1}, {1, 0, 0}};
+    self.vertices[28] = (ZZVertex){{0.5, 0.5, -0.5}, {1, 0}, {1, 0, 0}};
+    self.vertices[29] = (ZZVertex){{0.5, -0.5, -0.5}, {0, 0}, {1, 0, 0}};
+    
+    // 后面
+    self.vertices[30] = (ZZVertex){{-0.5, 0.5, -0.5}, {0, 1}, {0, 0, -1}};
+    self.vertices[31] = (ZZVertex){{-0.5, -0.5, -0.5}, {0, 0}, {0, 0, -1}};
+    self.vertices[32] = (ZZVertex){{0.5, 0.5, -0.5}, {1, 1}, {0, 0, -1}};
+    self.vertices[33] = (ZZVertex){{-0.5, -0.5, -0.5}, {0, 0}, {0, 0, -1}};
+    self.vertices[34] = (ZZVertex){{0.5, 0.5, -0.5}, {1, 1}, {0, 0, -1}};
+    self.vertices[35] = (ZZVertex){{0.5, -0.5, -0.5}, {1, 0}, {0, 0, -1}};
     
     
     //开辟顶点缓冲区
@@ -101,8 +155,20 @@ static NSInteger const kCoorCount = 36;
 
 - (void)glkView:(nonnull GLKView *)view drawInRect:(CGRect)rect
 {
-    
+    //开启深度测试
+    glEnable(GL_DEPTH_TEST);
+    //清空颜色缓冲区和深度缓冲区
+    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+    //准备绘制
+    [self.baseEffect prepareToDraw];
+    //绘制
+    glDrawArrays(GL_TRIANGLES, 0, kCoorCount);
 }
 
-
+- (void)update
+{
+    self.angle = (self.angle + 1) % 360;
+    self.baseEffect.transform.modelviewMatrix = GLKMatrix4MakeRotation(GLKMathDegreesToRadians(self.angle), 0.3, 1, 0.7);
+    [self.glkView display];
+}
 @end
