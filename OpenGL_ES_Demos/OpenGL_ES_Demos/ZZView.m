@@ -141,7 +141,8 @@
     glVertexAttribPointer(textCoor, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*5, (float *)NULL + 3);
     
     //10.加载纹理
-    [self setupTexture:@"kunkun"];
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"jj" ofType:@"jpg"];
+    [self setupTexture:path];
     
     //11. 设置纹理采样器 sampler2D
     glUniform1i(glGetUniformLocation(self.programe, "colorMap"), 0);
@@ -161,7 +162,8 @@
 - (GLuint)setupTexture:(NSString *)fileName {
     
     //1、将 UIImage 转换为 CGImageRef
-    CGImageRef spriteImage = [UIImage imageNamed:fileName].CGImage;
+    CGImageRef spriteImage = [UIImage imageWithContentsOfFile:fileName].CGImage;
+    //[UIImage imageNamed:fileName].CGImage;
     
     //判断图片是否获取成功
     if (!spriteImage) {
