@@ -20,6 +20,8 @@
 		F41C98EE24D070E300B6B527 /* Demo2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98ED24D070E300B6B527 /* Demo2ViewController.m */; };
 		F41C98F124D072A700B6B527 /* ZZView.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98F024D072A700B6B527 /* ZZView.m */; };
 		F41C98F524D662B400B6B527 /* Demo3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98F424D662B400B6B527 /* Demo3ViewController.m */; };
+		F41C98F924D9931F00B6B527 /* ZZVertAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98F824D9931F00B6B527 /* ZZVertAttribArrayBuffer.m */; };
+		F41C98FC24D9A36500B6B527 /* ZZPointParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98FB24D9A36500B6B527 /* ZZPointParticleEffect.m */; };
 		FF7AD58424CBFE8500B1B23B /* jj.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF7AD58324CBFE8500B1B23B /* jj.jpg */; };
 		FF7AD58C24D92E2800B1B23B /* Demo4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD58B24D92E2800B1B23B /* Demo4ViewController.m */; };
 		FF7AD58F24D92E3700B1B23B /* Demo4View.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD58E24D92E3700B1B23B /* Demo4View.m */; };
@@ -52,6 +54,10 @@
 		F41C98F024D072A700B6B527 /* ZZView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZView.m; sourceTree = "<group>"; };
 		F41C98F324D662B400B6B527 /* Demo3ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo3ViewController.h; sourceTree = "<group>"; };
 		F41C98F424D662B400B6B527 /* Demo3ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo3ViewController.m; sourceTree = "<group>"; };
+		F41C98F724D9931F00B6B527 /* ZZVertAttribArrayBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZVertAttribArrayBuffer.h; sourceTree = "<group>"; };
+		F41C98F824D9931F00B6B527 /* ZZVertAttribArrayBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZVertAttribArrayBuffer.m; sourceTree = "<group>"; };
+		F41C98FA24D9A36500B6B527 /* ZZPointParticleEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZPointParticleEffect.h; sourceTree = "<group>"; };
+		F41C98FB24D9A36500B6B527 /* ZZPointParticleEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZPointParticleEffect.m; sourceTree = "<group>"; };
 		FF7AD58324CBFE8500B1B23B /* jj.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jj.jpg; sourceTree = "<group>"; };
 		FF7AD58A24D92E2800B1B23B /* Demo4ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo4ViewController.h; sourceTree = "<group>"; };
 		FF7AD58B24D92E2800B1B23B /* Demo4ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo4ViewController.m; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 		F41C98C724C8875A00B6B527 /* OpenGL_ES_Demos */ = {
 			isa = PBXGroup;
 			children = (
+				F41C98F624D992F400B6B527 /* Kit */,
 				FF7AD59024D92EA500B1B23B /* Utils */,
 				F41C98F224D6627200B6B527 /* Demos */,
 				FF7AD58324CBFE8500B1B23B /* jj.jpg */,
@@ -131,6 +138,17 @@
 				F41C98F424D662B400B6B527 /* Demo3ViewController.m */,
 			);
 			path = Demos;
+			sourceTree = "<group>";
+		};
+		F41C98F624D992F400B6B527 /* Kit */ = {
+			isa = PBXGroup;
+			children = (
+				F41C98F724D9931F00B6B527 /* ZZVertAttribArrayBuffer.h */,
+				F41C98F824D9931F00B6B527 /* ZZVertAttribArrayBuffer.m */,
+				F41C98FA24D9A36500B6B527 /* ZZPointParticleEffect.h */,
+				F41C98FB24D9A36500B6B527 /* ZZPointParticleEffect.m */,
+			);
+			path = Kit;
 			sourceTree = "<group>";
 		};
 		FF7AD58924D92E0800B1B23B /* Demo4 */ = {
@@ -238,10 +256,12 @@
 				F41C98E724CF1F3200B6B527 /* Dmoe1ViewController.m in Sources */,
 				FF7AD58C24D92E2800B1B23B /* Demo4ViewController.m in Sources */,
 				F41C98D024C8875A00B6B527 /* ViewController.m in Sources */,
+				F41C98F924D9931F00B6B527 /* ZZVertAttribArrayBuffer.m in Sources */,
 				FF7AD59824D92EA500B1B23B /* GLESMath.c in Sources */,
 				FF7AD59724D92EA500B1B23B /* GLESUtils.m in Sources */,
 				FF7AD58F24D92E3700B1B23B /* Demo4View.m in Sources */,
 				F41C98CA24C8875A00B6B527 /* AppDelegate.m in Sources */,
+				F41C98FC24D9A36500B6B527 /* ZZPointParticleEffect.m in Sources */,
 				F41C98F124D072A700B6B527 /* ZZView.m in Sources */,
 				F41C98DB24C8875E00B6B527 /* main.m in Sources */,
 				F41C98CD24C8875A00B6B527 /* SceneDelegate.m in Sources */,
