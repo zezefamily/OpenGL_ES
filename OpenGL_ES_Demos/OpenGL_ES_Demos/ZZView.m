@@ -9,7 +9,9 @@
 #import "ZZView.h"
 #import <OpenGLES/ES2/gl.h>
 @interface ZZView()
-
+{
+    CGRect _frame;
+}
 @property (nonatomic,strong) CAEAGLLayer *egaLayer;
 
 @property (nonatomic,strong) EAGLContext *context;
@@ -23,6 +25,14 @@
 @end
 @implementation ZZView
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if(self == [super initWithFrame:frame]){
+        _frame = frame;
+    }
+    return self;
+}
+
 - (void)layoutSubviews
 {
     //1.设置图层
@@ -34,7 +44,7 @@
     //4.设置渲染缓冲区
     [self setupRenderBuffer];
     //5.设置帧缓冲区
-    [self setupRenderBuffer];
+    [self setFrameBuffer];
     //6.开始绘制
     [self renderLayer];
 }
@@ -49,7 +59,7 @@
     
     //1.设置视口大小
     CGFloat scale = [[UIScreen mainScreen]scale];
-    glViewport(self.frame.origin.x * scale, self.frame.origin.y * scale, self.frame.size.width * scale, self.frame.size.height * scale);
+    glViewport(_frame.origin.x * scale, _frame.origin.y * scale, _frame.size.width * scale, _frame.size.height * scale);
     
     //2.读取顶点着色程序、片元着色程序
     NSString *vertFile = [[NSBundle mainBundle]pathForResource:@"shaderv" ofType:@"vsh"];
@@ -142,7 +152,7 @@
     
     //10.加载纹理
     NSString *path = [[NSBundle mainBundle]pathForResource:@"jj" ofType:@"jpg"];
-    [self setupTexture:path];
+    [self setupTexture:@"kunkun"];
     
     //11. 设置纹理采样器 sampler2D
     glUniform1i(glGetUniformLocation(self.programe, "colorMap"), 0);
@@ -162,7 +172,7 @@
 - (GLuint)setupTexture:(NSString *)fileName {
     
     //1、将 UIImage 转换为 CGImageRef
-    CGImageRef spriteImage = [UIImage imageWithContentsOfFile:fileName].CGImage;
+    CGImageRef spriteImage = [UIImage imageNamed:fileName].CGImage;
     //[UIImage imageNamed:fileName].CGImage;
     
     //判断图片是否获取成功
@@ -203,6 +213,8 @@
     //6.使用默认方式绘制
     CGContextDrawImage(spriteContext, rect, spriteImage);
    
+    CGContextScaleCTM(spriteContext, 0.5, 0.5);
+    
     //7、画图完毕就释放上下文
     CGContextRelease(spriteContext);
     
@@ -298,6 +310,7 @@
      重写layerClass，将CCView返回的图层从CALayer替换成CAEAGLLayer
      */
     self.egaLayer = (CAEAGLLayer *)self.layer;
+    self.egaLayer.backgroundColor = [UIColor lightGrayColor].CGColor;
     //2.设置scale
     [self setContentScaleFactor:[[UIScreen mainScreen]scale]];
     //3.设置描述属性，这里设置不维持渲染内容以及颜色格式为RGBA8
@@ -313,21 +326,31 @@
 
 - (void)setUpContext
 {
-    EAGLContext *context = [[EAGLContext alloc]initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    if(!context){
+    //1.指定OpenGL ES 渲染API版本，我们使用2.0
+    EAGLRenderingAPI api = kEAGLRenderingAPIOpenGLES2;
+    //2.创建图形上下文
+    EAGLContext *context = [[EAGLContext alloc]initWithAPI:api];
+    //3.判断是否创建成功
+    if (!context) {
+        NSLog(@"Create context failed!");
         return;
     }
-    [EAGLContext setCurrentContext:context];
+    //4.设置图形上下文
+    if (![EAGLContext setCurrentContext:context]) {
+        NSLog(@"setCurrentContext failed!");
+        return;
+    }
+    //5.将局部context，变成全局的
     self.context = context;
 }
 
 - (void)deleteBuffers
 {
-    glDeleteBuffers(1, &_colorFrameBuffer);
-    self.colorFrameBuffer = 0;
-    
     glDeleteBuffers(1, &_colorRenderBuffer);
     self.colorRenderBuffer = 0;
+    
+    glDeleteBuffers(1, &_colorFrameBuffer);
+    self.colorFrameBuffer = 0;
 }
 
 - (void)setupRenderBuffer
@@ -335,11 +358,11 @@
     //定义一个缓存区ID
     GLuint buffer;
     //申请一个缓存区标志
-    glGenBuffers(1, &buffer);
+    glGenRenderbuffers(1, &buffer);
     //
     self.colorRenderBuffer = buffer;
     
-    glBindBuffer(GL_RENDERBUFFER, self.colorRenderBuffer);
+    glBindRenderbuffer(GL_RENDERBUFFER, self.colorRenderBuffer);
     
     [self.context renderbufferStorage:GL_RENDERBUFFER fromDrawable:self.egaLayer];
 }

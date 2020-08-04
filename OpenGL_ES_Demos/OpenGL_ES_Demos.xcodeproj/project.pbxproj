@@ -15,10 +15,11 @@
 		F41C98D824C8875E00B6B527 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41C98D624C8875E00B6B527 /* LaunchScreen.storyboard */; };
 		F41C98DB24C8875E00B6B527 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98DA24C8875E00B6B527 /* main.m */; };
 		F41C98E724CF1F3200B6B527 /* Dmoe1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98E624CF1F3200B6B527 /* Dmoe1ViewController.m */; };
-		F41C98E924D06C2800B6B527 /* shaderf.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F41C98E824D06C2800B6B527 /* shaderf.vsh */; };
+		F41C98E924D06C2800B6B527 /* shaderv.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F41C98E824D06C2800B6B527 /* shaderv.vsh */; };
 		F41C98EB24D06C3900B6B527 /* shaderf.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F41C98EA24D06C3900B6B527 /* shaderf.fsh */; };
 		F41C98EE24D070E300B6B527 /* Demo2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98ED24D070E300B6B527 /* Demo2ViewController.m */; };
 		F41C98F124D072A700B6B527 /* ZZView.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98F024D072A700B6B527 /* ZZView.m */; };
+		F41C98F524D662B400B6B527 /* Demo3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98F424D662B400B6B527 /* Demo3ViewController.m */; };
 		FF7AD58424CBFE8500B1B23B /* jj.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF7AD58324CBFE8500B1B23B /* jj.jpg */; };
 /* End PBXBuildFile section */
 
@@ -37,12 +38,14 @@
 		F41C98DA24C8875E00B6B527 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F41C98E524CF1F3200B6B527 /* Dmoe1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dmoe1ViewController.h; sourceTree = "<group>"; };
 		F41C98E624CF1F3200B6B527 /* Dmoe1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dmoe1ViewController.m; sourceTree = "<group>"; };
-		F41C98E824D06C2800B6B527 /* shaderf.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shaderf.vsh; sourceTree = "<group>"; };
+		F41C98E824D06C2800B6B527 /* shaderv.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shaderv.vsh; sourceTree = "<group>"; };
 		F41C98EA24D06C3900B6B527 /* shaderf.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shaderf.fsh; sourceTree = "<group>"; };
 		F41C98EC24D070E300B6B527 /* Demo2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo2ViewController.h; sourceTree = "<group>"; };
 		F41C98ED24D070E300B6B527 /* Demo2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo2ViewController.m; sourceTree = "<group>"; };
 		F41C98EF24D072A700B6B527 /* ZZView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZView.h; sourceTree = "<group>"; };
 		F41C98F024D072A700B6B527 /* ZZView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZView.m; sourceTree = "<group>"; };
+		F41C98F324D662B400B6B527 /* Demo3ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo3ViewController.h; sourceTree = "<group>"; };
+		F41C98F424D662B400B6B527 /* Demo3ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo3ViewController.m; sourceTree = "<group>"; };
 		FF7AD58324CBFE8500B1B23B /* jj.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jj.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +79,7 @@
 		F41C98C724C8875A00B6B527 /* OpenGL_ES_Demos */ = {
 			isa = PBXGroup;
 			children = (
+				F41C98F224D6627200B6B527 /* Demos */,
 				FF7AD58324CBFE8500B1B23B /* jj.jpg */,
 				F41C98C824C8875A00B6B527 /* AppDelegate.h */,
 				F41C98C924C8875A00B6B527 /* AppDelegate.m */,
@@ -92,12 +96,21 @@
 				F41C98ED24D070E300B6B527 /* Demo2ViewController.m */,
 				F41C98E524CF1F3200B6B527 /* Dmoe1ViewController.h */,
 				F41C98E624CF1F3200B6B527 /* Dmoe1ViewController.m */,
-				F41C98E824D06C2800B6B527 /* shaderf.vsh */,
+				F41C98E824D06C2800B6B527 /* shaderv.vsh */,
 				F41C98EA24D06C3900B6B527 /* shaderf.fsh */,
 				F41C98EF24D072A700B6B527 /* ZZView.h */,
 				F41C98F024D072A700B6B527 /* ZZView.m */,
 			);
 			path = OpenGL_ES_Demos;
+			sourceTree = "<group>";
+		};
+		F41C98F224D6627200B6B527 /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				F41C98F324D662B400B6B527 /* Demo3ViewController.h */,
+				F41C98F424D662B400B6B527 /* Demo3ViewController.m */,
+			);
+			path = Demos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,7 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F41C98D824C8875E00B6B527 /* LaunchScreen.storyboard in Resources */,
-				F41C98E924D06C2800B6B527 /* shaderf.vsh in Resources */,
+				F41C98E924D06C2800B6B527 /* shaderv.vsh in Resources */,
 				F41C98D524C8875E00B6B527 /* Assets.xcassets in Resources */,
 				F41C98EB24D06C3900B6B527 /* shaderf.fsh in Resources */,
 				F41C98D324C8875A00B6B527 /* Main.storyboard in Resources */,
@@ -180,6 +193,7 @@
 				F41C98F124D072A700B6B527 /* ZZView.m in Sources */,
 				F41C98DB24C8875E00B6B527 /* main.m in Sources */,
 				F41C98CD24C8875A00B6B527 /* SceneDelegate.m in Sources */,
+				F41C98F524D662B400B6B527 /* Demo3ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

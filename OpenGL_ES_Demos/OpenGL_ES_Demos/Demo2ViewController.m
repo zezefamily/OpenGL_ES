@@ -7,7 +7,7 @@
 //
 
 #import "Demo2ViewController.h"
-
+#import "Demo3ViewController.h"
 @interface Demo2ViewController ()
 
 @end
@@ -17,6 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)btnClick:(UIButton *)sender {
+    
+    Demo3ViewController *demo3 = [[Demo3ViewController alloc]init];
+    demo3.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:demo3 animated:YES completion:nil];
+}
+- (IBAction)btn1Click:(UIButton *)sender {
+    
 }
 
 /*
