@@ -29,24 +29,27 @@
 {
     if(self == [super initWithFrame:frame]){
         _frame = frame;
+        
+        //1.设置图层
+        [self setupLayer];
+        //2.创建上下文
+        [self setUpContext];
+        //3.清空缓冲区
+        [self deleteBuffers];
+        //4.设置渲染缓冲区
+        [self setupRenderBuffer];
+        //5.设置帧缓冲区
+        [self setFrameBuffer];
+        //6.开始绘制
+        [self renderLayer];
+        
     }
     return self;
 }
 
 - (void)layoutSubviews
 {
-    //1.设置图层
-    [self setupLayer];
-    //2.创建上下文
-    [self setUpContext];
-    //3.清空缓冲区
-    [self deleteBuffers];
-    //4.设置渲染缓冲区
-    [self setupRenderBuffer];
-    //5.设置帧缓冲区
-    [self setFrameBuffer];
-    //6.开始绘制
-    [self renderLayer];
+    
 }
 
 //6.开始绘制
@@ -152,7 +155,7 @@
     
     //10.加载纹理
     NSString *path = [[NSBundle mainBundle]pathForResource:@"jj" ofType:@"jpg"];
-    [self setupTexture:@"kunkun"];
+    [self setupTexture:path];
     
     //11. 设置纹理采样器 sampler2D
     glUniform1i(glGetUniformLocation(self.programe, "colorMap"), 0);
@@ -163,7 +166,6 @@
     //13.从渲染缓存区显示到屏幕上
     [self.context presentRenderbuffer:GL_RENDERBUFFER];
     
-    
 }
 
 
@@ -173,7 +175,6 @@
     
     //1、将 UIImage 转换为 CGImageRef
     CGImageRef spriteImage = [UIImage imageNamed:fileName].CGImage;
-    //[UIImage imageNamed:fileName].CGImage;
     
     //判断图片是否获取成功
     if (!spriteImage) {
@@ -213,7 +214,14 @@
     //6.使用默认方式绘制
     CGContextDrawImage(spriteContext, rect, spriteImage);
    
-    CGContextScaleCTM(spriteContext, 0.5, 0.5);
+    //图片翻转
+//    CGContextTranslateCTM(spriteContext, rect.origin.x, rect.origin.y);
+    //在上下文中更改用户坐标系的原点。纹理的原点默认在左下角，通过CGContextTranslateCTM更改到左上角
+    CGContextTranslateCTM(spriteContext, 0, rect.size.height);
+    //在上下文中更改用户坐标系的比例。(x,y轴缩放因子)
+    CGContextScaleCTM(spriteContext, 1, -1);
+//    CGContextTranslateCTM(spriteContext, -rect.origin.x, -rect.origin.y);
+    CGContextDrawImage(spriteContext, rect, spriteImage);
     
     //7、画图完毕就释放上下文
     CGContextRelease(spriteContext);
