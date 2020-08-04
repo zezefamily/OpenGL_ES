@@ -21,6 +21,12 @@
 		F41C98F124D072A700B6B527 /* ZZView.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98F024D072A700B6B527 /* ZZView.m */; };
 		F41C98F524D662B400B6B527 /* Demo3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98F424D662B400B6B527 /* Demo3ViewController.m */; };
 		FF7AD58424CBFE8500B1B23B /* jj.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF7AD58324CBFE8500B1B23B /* jj.jpg */; };
+		FF7AD58C24D92E2800B1B23B /* Demo4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD58B24D92E2800B1B23B /* Demo4ViewController.m */; };
+		FF7AD58F24D92E3700B1B23B /* Demo4View.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD58E24D92E3700B1B23B /* Demo4View.m */; };
+		FF7AD59724D92EA500B1B23B /* GLESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD59124D92EA500B1B23B /* GLESUtils.m */; };
+		FF7AD59824D92EA500B1B23B /* GLESMath.c in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD59324D92EA500B1B23B /* GLESMath.c */; };
+		FF7AD59A24D9381400B1B23B /* shaderv.glsl in Resources */ = {isa = PBXBuildFile; fileRef = FF7AD59924D9381400B1B23B /* shaderv.glsl */; };
+		FF7AD59C24D9382600B1B23B /* shaderf.glsl in Resources */ = {isa = PBXBuildFile; fileRef = FF7AD59B24D9382600B1B23B /* shaderf.glsl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +53,18 @@
 		F41C98F324D662B400B6B527 /* Demo3ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo3ViewController.h; sourceTree = "<group>"; };
 		F41C98F424D662B400B6B527 /* Demo3ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo3ViewController.m; sourceTree = "<group>"; };
 		FF7AD58324CBFE8500B1B23B /* jj.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jj.jpg; sourceTree = "<group>"; };
+		FF7AD58A24D92E2800B1B23B /* Demo4ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo4ViewController.h; sourceTree = "<group>"; };
+		FF7AD58B24D92E2800B1B23B /* Demo4ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo4ViewController.m; sourceTree = "<group>"; };
+		FF7AD58D24D92E3700B1B23B /* Demo4View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo4View.h; sourceTree = "<group>"; };
+		FF7AD58E24D92E3700B1B23B /* Demo4View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo4View.m; sourceTree = "<group>"; };
+		FF7AD59124D92EA500B1B23B /* GLESUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESUtils.m; sourceTree = "<group>"; };
+		FF7AD59224D92EA500B1B23B /* Quaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quaternion.h; sourceTree = "<group>"; };
+		FF7AD59324D92EA500B1B23B /* GLESMath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GLESMath.c; sourceTree = "<group>"; };
+		FF7AD59424D92EA500B1B23B /* GLESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESUtils.h; sourceTree = "<group>"; };
+		FF7AD59524D92EA500B1B23B /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		FF7AD59624D92EA500B1B23B /* GLESMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESMath.h; sourceTree = "<group>"; };
+		FF7AD59924D9381400B1B23B /* shaderv.glsl */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = shaderv.glsl; sourceTree = "<group>"; };
+		FF7AD59B24D9382600B1B23B /* shaderf.glsl */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = shaderf.glsl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +97,7 @@
 		F41C98C724C8875A00B6B527 /* OpenGL_ES_Demos */ = {
 			isa = PBXGroup;
 			children = (
+				FF7AD59024D92EA500B1B23B /* Utils */,
 				F41C98F224D6627200B6B527 /* Demos */,
 				FF7AD58324CBFE8500B1B23B /* jj.jpg */,
 				F41C98C824C8875A00B6B527 /* AppDelegate.h */,
@@ -107,10 +126,37 @@
 		F41C98F224D6627200B6B527 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				FF7AD58924D92E0800B1B23B /* Demo4 */,
 				F41C98F324D662B400B6B527 /* Demo3ViewController.h */,
 				F41C98F424D662B400B6B527 /* Demo3ViewController.m */,
 			);
 			path = Demos;
+			sourceTree = "<group>";
+		};
+		FF7AD58924D92E0800B1B23B /* Demo4 */ = {
+			isa = PBXGroup;
+			children = (
+				FF7AD58A24D92E2800B1B23B /* Demo4ViewController.h */,
+				FF7AD58B24D92E2800B1B23B /* Demo4ViewController.m */,
+				FF7AD58D24D92E3700B1B23B /* Demo4View.h */,
+				FF7AD58E24D92E3700B1B23B /* Demo4View.m */,
+				FF7AD59924D9381400B1B23B /* shaderv.glsl */,
+				FF7AD59B24D9382600B1B23B /* shaderf.glsl */,
+			);
+			path = Demo4;
+			sourceTree = "<group>";
+		};
+		FF7AD59024D92EA500B1B23B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FF7AD59424D92EA500B1B23B /* GLESUtils.h */,
+				FF7AD59124D92EA500B1B23B /* GLESUtils.m */,
+				FF7AD59224D92EA500B1B23B /* Quaternion.h */,
+				FF7AD59624D92EA500B1B23B /* GLESMath.h */,
+				FF7AD59324D92EA500B1B23B /* GLESMath.c */,
+				FF7AD59524D92EA500B1B23B /* Vector.h */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +217,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F41C98D824C8875E00B6B527 /* LaunchScreen.storyboard in Resources */,
+				FF7AD59C24D9382600B1B23B /* shaderf.glsl in Resources */,
+				FF7AD59A24D9381400B1B23B /* shaderv.glsl in Resources */,
 				F41C98E924D06C2800B6B527 /* shaderv.vsh in Resources */,
 				F41C98D524C8875E00B6B527 /* Assets.xcassets in Resources */,
 				F41C98EB24D06C3900B6B527 /* shaderf.fsh in Resources */,
@@ -188,7 +236,11 @@
 			files = (
 				F41C98EE24D070E300B6B527 /* Demo2ViewController.m in Sources */,
 				F41C98E724CF1F3200B6B527 /* Dmoe1ViewController.m in Sources */,
+				FF7AD58C24D92E2800B1B23B /* Demo4ViewController.m in Sources */,
 				F41C98D024C8875A00B6B527 /* ViewController.m in Sources */,
+				FF7AD59824D92EA500B1B23B /* GLESMath.c in Sources */,
+				FF7AD59724D92EA500B1B23B /* GLESUtils.m in Sources */,
+				FF7AD58F24D92E3700B1B23B /* Demo4View.m in Sources */,
 				F41C98CA24C8875A00B6B527 /* AppDelegate.m in Sources */,
 				F41C98F124D072A700B6B527 /* ZZView.m in Sources */,
 				F41C98DB24C8875E00B6B527 /* main.m in Sources */,
