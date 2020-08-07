@@ -54,19 +54,125 @@ typedef enum {
 
 @implementation ZZPointParticleEffect
 
+- (instancetype)init
+{
+    if(self == [super init]){
+        //初始化纹理属性
+        _texture2D0 = [[GLKEffectPropertyTexture alloc]init];
+        _texture2D0.enabled = YES;
+        _texture2D0.name = 0;
+        _texture2D0.target = GLKTextureTarget2D;
+        _texture2D0.envMode = GLKTextureEnvModeReplace;
+        //初始化transform
+        _transform = [[GLKEffectPropertyTransform alloc]init];
+        //初始化重力属性
+        _gravity = ZZDefaultGravity;
+        //耗时
+        _elapsedSeconds = 0.0f;
+        //粒子属性数据
+        _particelAttributesData = [NSMutableData data];
+    }
+    return self;
+}
+
+//获取一个粒子的属性值
+- (ZZPointParticleAttributes)particleAtIndex:(NSUInteger)index
+{
+    const ZZPointParticleAttributes *particelsPtr = (const ZZPointParticleAttributes *)[self.particelAttributesData bytes];
+    return particelsPtr[index];
+}
+//设置粒子的属性
+- (void)setParticle:(ZZPointParticleAttributes)aParticle atIndex:(NSUInteger)index
+{
+    ZZPointParticleAttributes *particelsPtr = (ZZPointParticleAttributes *)[self.particelAttributesData mutableBytes];
+    particelsPtr[index] = aParticle;
+    //更改粒子状态 是否更新
+    self.particleDataWasUpdated = YES;
+}
+//添加粒子
 - (void)addParticleAtPosition:(GLKVector3)aPosition velocity:(GLKVector3)aVelocity force:(GLKVector3)aForce size:(float)aSize lifeSpanSeconds:(NSTimeInterval)aSpan fadeDurationSeconds:(NSTimeInterval)aDuration
 {
+    //创建粒子
+    ZZPointParticleAttributes newParticle;
+    //设置属性
+    newParticle.emissionPosition = aPosition;
+    newParticle.emissionForce = aForce;
+    newParticle.emissionVelocity = aVelocity;
+    newParticle.size = GLKVector2Make(aSize, aDuration);
+    //向量(耗时，发射时长)
+    newParticle.emissionTimeAndLife = GLKVector2Make(elapsedSeconds, elapsedSeconds + aSpan);
     
+    BOOL foundSlot = NO;
+    
+    //粒子个数
+    const long count = self.numberOfParticles;
+    
+    for(int i = 0;i<count;i++){
+        ZZPointParticleAttributes oldParticle = [self particleAtIndex:i];
+        if(oldParticle.emissionTimeAndLife.y < self.elapsedSeconds){
+            [self setParticle:newParticle atIndex:i];
+            foundSlot = YES;
+        }
+    }
+    
+    if(!foundSlot){
+        [self.particelAttributesData appendBytes:&newParticle length:sizeof(newParticle)];
+        self.particleDataWasUpdated = YES;
+    }
+    
+}
+
+- (NSUInteger)numberOfParticles
+{
+    long ret = [self.particelAttributesData length]/sizeof(ZZPointParticleAttributes);
+    return ret;
 }
 
 /// 准备绘制
 - (void)prepareToDraw
 {
-    
+    if(program == 0){
+        [self loadSharders];
+    }else{
+        //使用program
+        glUseProgram(program);
+        //计算MVP矩阵变化
+        GLKMatrix4 modelViewProjectionMatrix = GLKMatrix4Multiply(self.transform.projectionMatrix, self.transform.modelviewMatrix);
+        //赋值给着色器
+        glUniformMatrix4fv(uniforms[ZZMVPMatrix], 1, 0, modelViewProjectionMatrix.m);
+        
+        glUniform1i(uniforms[ZZSamplers2D], 0);
+        
+        glUniform3fv(uniforms[ZZGravity], 1, self.gravity.v);
+        
+        glUniform1fv(uniforms[ZZElapsedSeconds], 1, &elapsedSeconds);
+        
+        if(self.particleDataWasUpdated){
+            if(self.particleAttributeBuffer == nil && [self.particelAttributesData length] > 0){
+                //数据大小
+                GLsizeiptr size = sizeof(ZZPointParticleAttributes);
+                int count = (int)[self.particelAttributesData length] / size;
+                self.particleAttributeBuffer = [[ZZVertAttribArrayBuffer alloc]initWithAttribStride:size numberOfVertices:count bytes:[self.particelAttributesData bytes] usage:GL_DYNAMIC_DRAW];
+            }else{
+                //数据大小
+                GLsizeiptr size = sizeof(ZZPointParticleAttributes);
+                int count = (int)[self.particelAttributesData length] / size;
+                [self.particleAttributeBuffer reInitWithAttribStride:size numberOfVertices:count bytes:[self.particelAttributesData bytes]];
+            }
+            self.particleDataWasUpdated = NO;
+        }
+        
+        
+    }
 }
 
 /// 绘制
 - (void)draw
+{
+    
+}
+
+- (void)loadSharders
 {
     
 }
