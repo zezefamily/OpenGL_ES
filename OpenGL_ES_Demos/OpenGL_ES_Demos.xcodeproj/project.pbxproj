@@ -22,6 +22,8 @@
 		F41C98F524D662B400B6B527 /* Demo3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98F424D662B400B6B527 /* Demo3ViewController.m */; };
 		F41C98F924D9931F00B6B527 /* ZZVertAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98F824D9931F00B6B527 /* ZZVertAttribArrayBuffer.m */; };
 		F41C98FC24D9A36500B6B527 /* ZZPointParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98FB24D9A36500B6B527 /* ZZPointParticleEffect.m */; };
+		F427E41724DD9D9F00D2772C /* ZZPointParticleShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E41624DD9D9F00D2772C /* ZZPointParticleShader.vsh */; };
+		F427E41924DD9DAC00D2772C /* ZZPointParticleShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E41824DD9DAC00D2772C /* ZZPointParticleShader.fsh */; };
 		FF7AD58424CBFE8500B1B23B /* jj.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF7AD58324CBFE8500B1B23B /* jj.jpg */; };
 		FF7AD58C24D92E2800B1B23B /* Demo4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD58B24D92E2800B1B23B /* Demo4ViewController.m */; };
 		FF7AD58F24D92E3700B1B23B /* Demo4View.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD58E24D92E3700B1B23B /* Demo4View.m */; };
@@ -58,6 +60,8 @@
 		F41C98F824D9931F00B6B527 /* ZZVertAttribArrayBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZVertAttribArrayBuffer.m; sourceTree = "<group>"; };
 		F41C98FA24D9A36500B6B527 /* ZZPointParticleEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZPointParticleEffect.h; sourceTree = "<group>"; };
 		F41C98FB24D9A36500B6B527 /* ZZPointParticleEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZPointParticleEffect.m; sourceTree = "<group>"; };
+		F427E41624DD9D9F00D2772C /* ZZPointParticleShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = ZZPointParticleShader.vsh; sourceTree = "<group>"; };
+		F427E41824DD9DAC00D2772C /* ZZPointParticleShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = ZZPointParticleShader.fsh; sourceTree = "<group>"; };
 		FF7AD58324CBFE8500B1B23B /* jj.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jj.jpg; sourceTree = "<group>"; };
 		FF7AD58A24D92E2800B1B23B /* Demo4ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo4ViewController.h; sourceTree = "<group>"; };
 		FF7AD58B24D92E2800B1B23B /* Demo4ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo4ViewController.m; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				F41C98F824D9931F00B6B527 /* ZZVertAttribArrayBuffer.m */,
 				F41C98FA24D9A36500B6B527 /* ZZPointParticleEffect.h */,
 				F41C98FB24D9A36500B6B527 /* ZZPointParticleEffect.m */,
+				F427E41824DD9DAC00D2772C /* ZZPointParticleShader.fsh */,
+				F427E41624DD9D9F00D2772C /* ZZPointParticleShader.vsh */,
 			);
 			path = Kit;
 			sourceTree = "<group>";
@@ -234,8 +240,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F427E41724DD9D9F00D2772C /* ZZPointParticleShader.vsh in Resources */,
 				F41C98D824C8875E00B6B527 /* LaunchScreen.storyboard in Resources */,
 				FF7AD59C24D9382600B1B23B /* shaderf.glsl in Resources */,
+				F427E41924DD9DAC00D2772C /* ZZPointParticleShader.fsh in Resources */,
 				FF7AD59A24D9381400B1B23B /* shaderv.glsl in Resources */,
 				F41C98E924D06C2800B6B527 /* shaderv.vsh in Resources */,
 				F41C98D524C8875E00B6B527 /* Assets.xcassets in Resources */,

@@ -161,20 +161,135 @@ typedef enum {
             }
             self.particleDataWasUpdated = NO;
         }
-        
-        
+        //准备数据
+        [self.particleAttributeBuffer prepareToDrawWithAtrib:ZZParticleAttribEmissionPosition numberOfCoordinates:3 attribOffset:offsetof(ZZPointParticleAttributes, emissionPosition) shouldEnable:YES];
+        [self.particleAttributeBuffer prepareToDrawWithAtrib:ZZParticleAttribEmissionVelocity numberOfCoordinates:3 attribOffset:offsetof(ZZPointParticleAttributes, emissionVelocity) shouldEnable:YES];
+        [self.particleAttributeBuffer prepareToDrawWithAtrib:ZZParticleAttribEmissionVelocity numberOfCoordinates:3 attribOffset:offsetof(ZZPointParticleAttributes, emissionForce) shouldEnable:YES];
+        [self.particleAttributeBuffer prepareToDrawWithAtrib:ZZParticleAttribEmissionVelocity numberOfCoordinates:2 attribOffset:offsetof(ZZPointParticleAttributes, size) shouldEnable:YES];
+        [self.particleAttributeBuffer prepareToDrawWithAtrib:ZZParticleAttribEmissionVelocity numberOfCoordinates:2 attribOffset:offsetof(ZZPointParticleAttributes, emissionTimeAndLife) shouldEnable:YES];
+        //绑定纹理
+        glActiveTexture(GL_TEXTURE0);
+        if(self.texture2D0.name != 0 && self.texture2D0.enabled){
+            glBindTexture(GL_TEXTURE_2D, self.texture2D0.name);
+        }else{
+            glBindTexture(GL_TEXTURE_2D, 0);
+        }
     }
 }
 
 /// 绘制
 - (void)draw
 {
-    
+    //禁用深度缓冲区写入
+    glDepthMask(GL_FALSE);
+    [self.particleAttributeBuffer drawArrayWithMode:GL_POINTS startVertexIndex:0 numberOfVertices:(int)self.numberOfParticles];
 }
 
-- (void)loadSharders
+- (BOOL)loadSharders
 {
+    GLuint vertShader, fragShader;
+    NSString *verShaderPathName,*fragShaderPathName;
+    //创建program
+    program = glCreateProgram();
+    //创建并编译 顶点着色器
+    verShaderPathName = [[NSBundle mainBundle]pathForResource:@"ZZPointParticleShader" ofType:@"vsh"];
+    if(![self compileShader:&vertShader type:GL_VERTEX_SHADER file:verShaderPathName]){
+        NSLog(@"顶点着色器编译失败");
+        return NO;
+    }
+    //创建编译 片元着色器
+    fragShaderPathName = [[NSBundle mainBundle]pathForResource:@"ZZPointParticleShader" ofType:@"fsh"];
+    if(![self compileShader:&fragShader type:GL_FRAGMENT_SHADER file:fragShaderPathName]){
+        NSLog(@"编译片元着色器失败");
+        return NO;
+    }
+    //将顶点着色器 和 片元着色器 附着 到 program
+    glAttachShader(program, vertShader);
+    glAttachShader(program, fragShader);
+    //绑定相关属性
+    //位置
+    glBindAttribLocation(program, ZZParticleAttribEmissionPosition, "a_emissionPosition");
+    //速度
+    glBindAttribLocation(program, ZZParticleAttribEmissionVelocity, "a_emissionVelocity");
+    //重力
+    glBindAttribLocation(program, ZZParticleAttribEmissionForce, "a_emissionForce");
+    //大小
+    glBindAttribLocation(program, ZZParticleAttribSize, "a_size");
+    //持续时间
+    glBindAttribLocation(program, ZZParticleAttribEmissionTimeAndLife, "a_emissionAndDeathTimes");
     
+    //link 链接
+    if(![self linkProgram:program]){
+        NSLog(@"program link failed !!");
+        if(vertShader){
+            glDeleteShader(vertShader);
+            vertShader = 0;
+        }
+        if(fragShader){
+            glDeleteShader(fragShader);
+            fragShader = 0;
+        }
+        if(program){
+            glDeleteProgram(program);
+            program = 0;
+        }
+        return NO;
+    }
+    //获取，绑定uniforms
+    //MVP变换矩阵
+    uniforms[ZZMVPMatrix] = glGetUniformLocation(program, "u_mvpMatrix");
+    //纹理
+    uniforms[ZZSamplers2D] = glGetUniformLocation(program, "u_samplers2D");
+    //重力
+    uniforms[ZZGravity] = glGetUniformLocation(program, "u_gravity");
+    //持续时间，渐隐时间
+    uniforms[ZZElapsedSeconds] = glGetUniformLocation(program, "u_elapsedSeconds");
+    
+    if(vertShader){
+        glDetachShader(program, vertShader);
+        glDeleteShader(vertShader);
+    }
+    if(fragShader){
+        glDetachShader(program, fragShader);
+        glDeleteShader(fragShader);
+    }
+    
+    return YES;
+}
+
+- (BOOL)linkProgram:(GLuint)program
+{
+    glLinkProgram(program);
+    GLint logLength;
+    glGetProgramiv(program, GL_INFO_LOG_LENGTH, &logLength);
+    if(logLength > 0){
+        GLchar *log = (GLchar *)malloc(logLength);
+        glGetProgramInfoLog(program, logLength, &logLength, log);
+        NSLog(@"error log: %s",log);
+        return NO;
+    }
+    return YES;
+}
+
+- (BOOL)compileShader:(GLuint *)shader type:(GLenum)type file:(NSString *)file
+{
+    const GLchar *source;
+    source = (GLchar *)[[NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil]UTF8String];
+    if(!source){
+        NSLog(@"Failed to load shader !!!");
+        return NO;
+    }
+    *shader = glCreateShader(type);
+    GLint logLength;
+    glGetShaderiv(*shader, GL_INFO_LOG_LENGTH, &logLength);
+    if(logLength > 0){
+        GLchar *log = (GLchar *)malloc(logLength);
+        glGetShaderInfoLog(*shader, logLength, &logLength, log);
+        NSLog(@"shader compile log: %s",log);
+        free(log);
+        return NO;
+    }
+    return YES;
 }
 
 
