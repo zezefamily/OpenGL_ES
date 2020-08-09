@@ -112,11 +112,14 @@ typedef struct {
     NSString *imgPath = [[NSBundle mainBundle]pathForResource:@"jj" ofType:@"jpg"];
     UIImage *image = [UIImage imageWithContentsOfFile:imgPath];
     CGImageRef imgRef = image.CGImage;
+    float width = CGImageGetWidth(imgRef);
     float height = CGImageGetHeight(imgRef);
-    NSLog(@"height == %f",height);
+    float scaleWH = width/height;
+    float layerW = self.view.frame.size.width - 220;
+    float layerH = layerW/(scaleWH);
     //CAEAGLLayer
     CAEAGLLayer *layer = [CAEAGLLayer layer];
-    layer.frame = CGRectMake(self.view.frame.size.width/2 - 150, self.view.frame.size.height/2 - 200, 300,400);
+    layer.frame = CGRectMake((self.view.frame.size.width - layerW)/2, 30, layerW,layerH);
     layer.backgroundColor = [UIColor greenColor].CGColor;
     layer.contentsScale = [UIScreen mainScreen].scale;
     [self.view.layer addSublayer:layer];
