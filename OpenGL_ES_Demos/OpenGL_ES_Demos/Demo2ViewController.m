@@ -9,6 +9,7 @@
 #import "Demo2ViewController.h"
 #import "Demo3ViewController.h"
 #import "Demo4ViewController.h"
+#import "FliterViewController.h"
 @interface Demo2ViewController ()
 
 @end
@@ -24,10 +25,12 @@
 //    Demo3ViewController *demo3 = [[Demo3ViewController alloc]init];
 //    demo3.modalPresentationStyle = UIModalPresentationFullScreen;
 //    [self presentViewController:demo3 animated:YES completion:nil];
-    Demo4ViewController *demo4 = [[Demo4ViewController alloc]init];
-    demo4.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:demo4 animated:YES completion:nil];
-    
+//    Demo4ViewController *demo4 = [[Demo4ViewController alloc]init];
+//    demo4.modalPresentationStyle = UIModalPresentationFullScreen;
+//    [self presentViewController:demo4 animated:YES completion:nil];
+    FliterViewController *fliterVC = [[FliterViewController alloc]init];
+    fliterVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:fliterVC animated:YES completion:nil];
     
 }
 - (IBAction)btn1Click:(UIButton *)sender {

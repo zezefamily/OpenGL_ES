@@ -24,6 +24,20 @@
 		F41C98FC24D9A36500B6B527 /* ZZPointParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98FB24D9A36500B6B527 /* ZZPointParticleEffect.m */; };
 		F427E41724DD9D9F00D2772C /* ZZPointParticleShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E41624DD9D9F00D2772C /* ZZPointParticleShader.vsh */; };
 		F427E41924DD9DAC00D2772C /* ZZPointParticleShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E41824DD9DAC00D2772C /* ZZPointParticleShader.fsh */; };
+		F427E41E24DE8F5900D2772C /* Normal.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E41D24DE8F5900D2772C /* Normal.vsh */; };
+		F427E42024DE8F6500D2772C /* Normal.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E41F24DE8F6500D2772C /* Normal.fsh */; };
+		F427E42424DE8FA600D2772C /* FliterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F427E42324DE8FA600D2772C /* FliterViewController.m */; };
+		F427E42724DE8FDD00D2772C /* ZZSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F427E42624DE8FDD00D2772C /* ZZSegmentControl.m */; };
+		F427E42A24DEE21200D2772C /* Filter_02.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E42924DEE21200D2772C /* Filter_02.vsh */; };
+		F427E42C24DEE21E00D2772C /* Filter_02.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E42B24DEE21E00D2772C /* Filter_02.fsh */; };
+		F427E42F24DEE9FD00D2772C /* Filter_03.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E42E24DEE9FD00D2772C /* Filter_03.vsh */; };
+		F427E43124DEEA0800D2772C /* Filter_03.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E43024DEEA0800D2772C /* Filter_03.fsh */; };
+		F427E43424DEF37700D2772C /* Filter_04.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E43324DEF37700D2772C /* Filter_04.vsh */; };
+		F427E43624DEF38F00D2772C /* Filter_04.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E43524DEF38F00D2772C /* Filter_04.fsh */; };
+		F427E43B24DEFE9600D2772C /* Filter_09.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E43A24DEFE9600D2772C /* Filter_09.vsh */; };
+		F427E43D24DEFEA100D2772C /* Filter_09.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E43C24DEFEA100D2772C /* Filter_09.fsh */; };
+		F427E44024DF00AE00D2772C /* Filter_06.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E43F24DF00AE00D2772C /* Filter_06.vsh */; };
+		F427E44224DF00B900D2772C /* Filter_06.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E44124DF00B900D2772C /* Filter_06.fsh */; };
 		FF7AD58424CBFE8500B1B23B /* jj.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF7AD58324CBFE8500B1B23B /* jj.jpg */; };
 		FF7AD58C24D92E2800B1B23B /* Demo4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD58B24D92E2800B1B23B /* Demo4ViewController.m */; };
 		FF7AD58F24D92E3700B1B23B /* Demo4View.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD58E24D92E3700B1B23B /* Demo4View.m */; };
@@ -62,6 +76,22 @@
 		F41C98FB24D9A36500B6B527 /* ZZPointParticleEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZPointParticleEffect.m; sourceTree = "<group>"; };
 		F427E41624DD9D9F00D2772C /* ZZPointParticleShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = ZZPointParticleShader.vsh; sourceTree = "<group>"; };
 		F427E41824DD9DAC00D2772C /* ZZPointParticleShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = ZZPointParticleShader.fsh; sourceTree = "<group>"; };
+		F427E41D24DE8F5900D2772C /* Normal.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Normal.vsh; sourceTree = "<group>"; };
+		F427E41F24DE8F6500D2772C /* Normal.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Normal.fsh; sourceTree = "<group>"; };
+		F427E42224DE8FA600D2772C /* FliterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FliterViewController.h; sourceTree = "<group>"; };
+		F427E42324DE8FA600D2772C /* FliterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FliterViewController.m; sourceTree = "<group>"; };
+		F427E42524DE8FDD00D2772C /* ZZSegmentControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZSegmentControl.h; sourceTree = "<group>"; };
+		F427E42624DE8FDD00D2772C /* ZZSegmentControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZSegmentControl.m; sourceTree = "<group>"; };
+		F427E42924DEE21200D2772C /* Filter_02.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Filter_02.vsh; sourceTree = "<group>"; };
+		F427E42B24DEE21E00D2772C /* Filter_02.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Filter_02.fsh; sourceTree = "<group>"; };
+		F427E42E24DEE9FD00D2772C /* Filter_03.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Filter_03.vsh; sourceTree = "<group>"; };
+		F427E43024DEEA0800D2772C /* Filter_03.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Filter_03.fsh; sourceTree = "<group>"; };
+		F427E43324DEF37700D2772C /* Filter_04.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Filter_04.vsh; sourceTree = "<group>"; };
+		F427E43524DEF38F00D2772C /* Filter_04.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Filter_04.fsh; sourceTree = "<group>"; };
+		F427E43A24DEFE9600D2772C /* Filter_09.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Filter_09.vsh; sourceTree = "<group>"; };
+		F427E43C24DEFEA100D2772C /* Filter_09.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Filter_09.fsh; sourceTree = "<group>"; };
+		F427E43F24DF00AE00D2772C /* Filter_06.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Filter_06.vsh; sourceTree = "<group>"; };
+		F427E44124DF00B900D2772C /* Filter_06.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Filter_06.fsh; sourceTree = "<group>"; };
 		FF7AD58324CBFE8500B1B23B /* jj.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jj.jpg; sourceTree = "<group>"; };
 		FF7AD58A24D92E2800B1B23B /* Demo4ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo4ViewController.h; sourceTree = "<group>"; };
 		FF7AD58B24D92E2800B1B23B /* Demo4ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo4ViewController.m; sourceTree = "<group>"; };
@@ -137,6 +167,7 @@
 		F41C98F224D6627200B6B527 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				F427E41A24DE8F1700D2772C /* 滤镜处理 */,
 				FF7AD58924D92E0800B1B23B /* Demo4 */,
 				F41C98F324D662B400B6B527 /* Demo3ViewController.h */,
 				F41C98F424D662B400B6B527 /* Demo3ViewController.m */,
@@ -155,6 +186,93 @@
 				F427E41624DD9D9F00D2772C /* ZZPointParticleShader.vsh */,
 			);
 			path = Kit;
+			sourceTree = "<group>";
+		};
+		F427E41A24DE8F1700D2772C /* 滤镜处理 */ = {
+			isa = PBXGroup;
+			children = (
+				F427E42124DE8F7900D2772C /* Tool */,
+				F427E41B24DE8F2A00D2772C /* Filter */,
+				F427E42224DE8FA600D2772C /* FliterViewController.h */,
+				F427E42324DE8FA600D2772C /* FliterViewController.m */,
+			);
+			path = "滤镜处理";
+			sourceTree = "<group>";
+		};
+		F427E41B24DE8F2A00D2772C /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				F427E43E24DF009A00D2772C /* Filter_06 */,
+				F427E43924DEFE7900D2772C /* Filter_09 */,
+				F427E43224DEF36700D2772C /* Filter_04 */,
+				F427E42D24DEE9E700D2772C /* Filter_03 */,
+				F427E42824DEE1B500D2772C /* Filter_02 */,
+				F427E41C24DE8F3500D2772C /* Normal */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		F427E41C24DE8F3500D2772C /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+				F427E41D24DE8F5900D2772C /* Normal.vsh */,
+				F427E41F24DE8F6500D2772C /* Normal.fsh */,
+			);
+			path = Normal;
+			sourceTree = "<group>";
+		};
+		F427E42124DE8F7900D2772C /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				F427E42524DE8FDD00D2772C /* ZZSegmentControl.h */,
+				F427E42624DE8FDD00D2772C /* ZZSegmentControl.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		F427E42824DEE1B500D2772C /* Filter_02 */ = {
+			isa = PBXGroup;
+			children = (
+				F427E42924DEE21200D2772C /* Filter_02.vsh */,
+				F427E42B24DEE21E00D2772C /* Filter_02.fsh */,
+			);
+			path = Filter_02;
+			sourceTree = "<group>";
+		};
+		F427E42D24DEE9E700D2772C /* Filter_03 */ = {
+			isa = PBXGroup;
+			children = (
+				F427E42E24DEE9FD00D2772C /* Filter_03.vsh */,
+				F427E43024DEEA0800D2772C /* Filter_03.fsh */,
+			);
+			path = Filter_03;
+			sourceTree = "<group>";
+		};
+		F427E43224DEF36700D2772C /* Filter_04 */ = {
+			isa = PBXGroup;
+			children = (
+				F427E43324DEF37700D2772C /* Filter_04.vsh */,
+				F427E43524DEF38F00D2772C /* Filter_04.fsh */,
+			);
+			path = Filter_04;
+			sourceTree = "<group>";
+		};
+		F427E43924DEFE7900D2772C /* Filter_09 */ = {
+			isa = PBXGroup;
+			children = (
+				F427E43A24DEFE9600D2772C /* Filter_09.vsh */,
+				F427E43C24DEFEA100D2772C /* Filter_09.fsh */,
+			);
+			path = Filter_09;
+			sourceTree = "<group>";
+		};
+		F427E43E24DF009A00D2772C /* Filter_06 */ = {
+			isa = PBXGroup;
+			children = (
+				F427E43F24DF00AE00D2772C /* Filter_06.vsh */,
+				F427E44124DF00B900D2772C /* Filter_06.fsh */,
+			);
+			path = Filter_06;
 			sourceTree = "<group>";
 		};
 		FF7AD58924D92E0800B1B23B /* Demo4 */ = {
@@ -240,14 +358,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F427E44024DF00AE00D2772C /* Filter_06.vsh in Resources */,
+				F427E42F24DEE9FD00D2772C /* Filter_03.vsh in Resources */,
+				F427E42A24DEE21200D2772C /* Filter_02.vsh in Resources */,
+				F427E42C24DEE21E00D2772C /* Filter_02.fsh in Resources */,
 				F427E41724DD9D9F00D2772C /* ZZPointParticleShader.vsh in Resources */,
+				F427E43124DEEA0800D2772C /* Filter_03.fsh in Resources */,
 				F41C98D824C8875E00B6B527 /* LaunchScreen.storyboard in Resources */,
+				F427E43D24DEFEA100D2772C /* Filter_09.fsh in Resources */,
+				F427E43B24DEFE9600D2772C /* Filter_09.vsh in Resources */,
+				F427E44224DF00B900D2772C /* Filter_06.fsh in Resources */,
 				FF7AD59C24D9382600B1B23B /* shaderf.glsl in Resources */,
+				F427E43424DEF37700D2772C /* Filter_04.vsh in Resources */,
 				F427E41924DD9DAC00D2772C /* ZZPointParticleShader.fsh in Resources */,
 				FF7AD59A24D9381400B1B23B /* shaderv.glsl in Resources */,
 				F41C98E924D06C2800B6B527 /* shaderv.vsh in Resources */,
+				F427E42024DE8F6500D2772C /* Normal.fsh in Resources */,
 				F41C98D524C8875E00B6B527 /* Assets.xcassets in Resources */,
 				F41C98EB24D06C3900B6B527 /* shaderf.fsh in Resources */,
+				F427E41E24DE8F5900D2772C /* Normal.vsh in Resources */,
+				F427E43624DEF38F00D2772C /* Filter_04.fsh in Resources */,
 				F41C98D324C8875A00B6B527 /* Main.storyboard in Resources */,
 				FF7AD58424CBFE8500B1B23B /* jj.jpg in Resources */,
 			);
@@ -265,6 +395,7 @@
 				FF7AD58C24D92E2800B1B23B /* Demo4ViewController.m in Sources */,
 				F41C98D024C8875A00B6B527 /* ViewController.m in Sources */,
 				F41C98F924D9931F00B6B527 /* ZZVertAttribArrayBuffer.m in Sources */,
+				F427E42724DE8FDD00D2772C /* ZZSegmentControl.m in Sources */,
 				FF7AD59824D92EA500B1B23B /* GLESMath.c in Sources */,
 				FF7AD59724D92EA500B1B23B /* GLESUtils.m in Sources */,
 				FF7AD58F24D92E3700B1B23B /* Demo4View.m in Sources */,
@@ -272,6 +403,7 @@
 				F41C98FC24D9A36500B6B527 /* ZZPointParticleEffect.m in Sources */,
 				F41C98F124D072A700B6B527 /* ZZView.m in Sources */,
 				F41C98DB24C8875E00B6B527 /* main.m in Sources */,
+				F427E42424DE8FA600D2772C /* FliterViewController.m in Sources */,
 				F41C98CD24C8875A00B6B527 /* SceneDelegate.m in Sources */,
 				F41C98F524D662B400B6B527 /* Demo3ViewController.m in Sources */,
 			);

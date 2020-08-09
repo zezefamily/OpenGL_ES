@@ -9,6 +9,8 @@
 #import "ZZPointParticleEffect.h"
 #import "ZZVertAttribArrayBuffer.h"
 
+const GLKVector3 ZZDefaultGravity = {0.0f,-9.80665f,0.0f};
+
 //用于定义粒子属性的类型
 typedef struct {
     GLKVector3 emissionPosition; //发射位置
@@ -54,6 +56,9 @@ typedef enum {
 
 @implementation ZZPointParticleEffect
 
+@synthesize gravity;
+@synthesize elapsedSeconds;
+
 - (instancetype)init
 {
     if(self == [super init]){
@@ -66,9 +71,9 @@ typedef enum {
         //初始化transform
         _transform = [[GLKEffectPropertyTransform alloc]init];
         //初始化重力属性
-        _gravity = ZZDefaultGravity;
+        gravity = ZZDefaultGravity;
         //耗时
-        _elapsedSeconds = 0.0f;
+        elapsedSeconds = 0.0f;
         //粒子属性数据
         _particelAttributesData = [NSMutableData data];
     }
