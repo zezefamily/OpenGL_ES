@@ -221,6 +221,9 @@ typedef struct {
 //初始化着色器
 - (void)setupShaderProgramWithName:(NSString *)name
 {
+    if([name isEqualToString:@""]){
+        return;
+    }
     //获取 着色器 program
     GLuint program = [self programWithShaderName:name];
     //使用program
@@ -297,37 +300,17 @@ typedef struct {
 - (void)loadUI
 {
     self.view.backgroundColor = [UIColor blackColor];
-    ZZSegmentControl *segmentControl = [[ZZSegmentControl alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 80, self.view.frame.size.width, 80) actions:@[@"原始图",@"二分图",@"三分图",@"四分图",@"六分图",@"九分图"]];
+    ZZSegmentControl *segmentControl = [[ZZSegmentControl alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 80, self.view.frame.size.width, 80) actions:@[@"原始图",@"二分图",@"三分图",@"四分图",@"六分图",@"九分图",@"灰度",@"翻转",@"马赛克1"]];
     segmentControl.delegate = self;
     [self.view addSubview:segmentControl];
 }
 - (void)itemDidSelectedWithIndex:(NSInteger)index
 {
     NSLog(@"index == %ld",index);
-    if(index == 0){
-        [self setupShaderProgramWithName:@"Normal"];
-    }else if (index == 1){
-        [self setupShaderProgramWithName:@"Filter_02"];
-    }else if(index == 2){
-        [self setupShaderProgramWithName:@"Filter_03"];
-    }else if(index == 3){
-        [self setupShaderProgramWithName:@"Filter_04"];
-    }else if (index == 5){
-        [self setupShaderProgramWithName:@"Filter_09"];
-    }else if(index == 4){
-        [self setupShaderProgramWithName:@"Filter_06"];
-    }
+    NSArray *filterArr = @[@"Normal",@"Filter_02",@"Filter_03",@"Filter_04",@"Filter_06",@"Filter_09",@"Gray_filter",@"Reversal",@"Mosaic"];
+    [self setupShaderProgramWithName:filterArr[index]];
     [self render];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

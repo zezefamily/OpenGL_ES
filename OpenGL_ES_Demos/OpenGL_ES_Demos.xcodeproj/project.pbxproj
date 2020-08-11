@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FA27FCB70D50F275EBF07F3 /* Pods_OpenGL_ES_Demos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABF93834FFB61D6D07CBFFE /* Pods_OpenGL_ES_Demos.framework */; };
 		F41C98CA24C8875A00B6B527 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98C924C8875A00B6B527 /* AppDelegate.m */; };
 		F41C98CD24C8875A00B6B527 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98CC24C8875A00B6B527 /* SceneDelegate.m */; };
 		F41C98D024C8875A00B6B527 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C98CF24C8875A00B6B527 /* ViewController.m */; };
@@ -38,6 +39,12 @@
 		F427E43D24DEFEA100D2772C /* Filter_09.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E43C24DEFEA100D2772C /* Filter_09.fsh */; };
 		F427E44024DF00AE00D2772C /* Filter_06.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E43F24DF00AE00D2772C /* Filter_06.vsh */; };
 		F427E44224DF00B900D2772C /* Filter_06.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E44124DF00B900D2772C /* Filter_06.fsh */; };
+		F427E44524E2BFF700D2772C /* Gray_filter.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E44424E2BFF700D2772C /* Gray_filter.vsh */; };
+		F427E44724E2C00500D2772C /* Gray_filter.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E44624E2C00500D2772C /* Gray_filter.fsh */; };
+		F427E44A24E2D7F600D2772C /* Reversal.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E44924E2D7F600D2772C /* Reversal.vsh */; };
+		F427E44C24E2D7FD00D2772C /* Reversal.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E44B24E2D7FD00D2772C /* Reversal.fsh */; };
+		F427E44F24E2D95000D2772C /* Mosaic.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E44E24E2D95000D2772C /* Mosaic.vsh */; };
+		F427E45124E2D95D00D2772C /* Mosaic.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E45024E2D95D00D2772C /* Mosaic.fsh */; };
 		FF7AD58424CBFE8500B1B23B /* jj.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF7AD58324CBFE8500B1B23B /* jj.jpg */; };
 		FF7AD58C24D92E2800B1B23B /* Demo4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD58B24D92E2800B1B23B /* Demo4ViewController.m */; };
 		FF7AD58F24D92E3700B1B23B /* Demo4View.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD58E24D92E3700B1B23B /* Demo4View.m */; };
@@ -48,6 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54B915E0EE029D244137420A /* Pods-OpenGL_ES_Demos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenGL_ES_Demos.release.xcconfig"; path = "Target Support Files/Pods-OpenGL_ES_Demos/Pods-OpenGL_ES_Demos.release.xcconfig"; sourceTree = "<group>"; };
+		956C4659255B3B805DC7D0A7 /* Pods-OpenGL_ES_Demos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenGL_ES_Demos.debug.xcconfig"; path = "Target Support Files/Pods-OpenGL_ES_Demos/Pods-OpenGL_ES_Demos.debug.xcconfig"; sourceTree = "<group>"; };
 		F41C98C524C8875A00B6B527 /* OpenGL_ES_Demos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGL_ES_Demos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41C98C824C8875A00B6B527 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F41C98C924C8875A00B6B527 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -92,6 +101,13 @@
 		F427E43C24DEFEA100D2772C /* Filter_09.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Filter_09.fsh; sourceTree = "<group>"; };
 		F427E43F24DF00AE00D2772C /* Filter_06.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Filter_06.vsh; sourceTree = "<group>"; };
 		F427E44124DF00B900D2772C /* Filter_06.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Filter_06.fsh; sourceTree = "<group>"; };
+		F427E44424E2BFF700D2772C /* Gray_filter.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Gray_filter.vsh; sourceTree = "<group>"; };
+		F427E44624E2C00500D2772C /* Gray_filter.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Gray_filter.fsh; sourceTree = "<group>"; };
+		F427E44924E2D7F600D2772C /* Reversal.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Reversal.vsh; sourceTree = "<group>"; };
+		F427E44B24E2D7FD00D2772C /* Reversal.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Reversal.fsh; sourceTree = "<group>"; };
+		F427E44E24E2D95000D2772C /* Mosaic.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Mosaic.vsh; sourceTree = "<group>"; };
+		F427E45024E2D95D00D2772C /* Mosaic.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Mosaic.fsh; sourceTree = "<group>"; };
+		FABF93834FFB61D6D07CBFFE /* Pods_OpenGL_ES_Demos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenGL_ES_Demos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7AD58324CBFE8500B1B23B /* jj.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jj.jpg; sourceTree = "<group>"; };
 		FF7AD58A24D92E2800B1B23B /* Demo4ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo4ViewController.h; sourceTree = "<group>"; };
 		FF7AD58B24D92E2800B1B23B /* Demo4ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo4ViewController.m; sourceTree = "<group>"; };
@@ -112,17 +128,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FA27FCB70D50F275EBF07F3 /* Pods_OpenGL_ES_Demos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7481189608A95D4D0C7E1B99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				956C4659255B3B805DC7D0A7 /* Pods-OpenGL_ES_Demos.debug.xcconfig */,
+				54B915E0EE029D244137420A /* Pods-OpenGL_ES_Demos.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7E51D76C09724B3166A8A187 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FABF93834FFB61D6D07CBFFE /* Pods_OpenGL_ES_Demos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F41C98BC24C8875900B6B527 = {
 			isa = PBXGroup;
 			children = (
 				F41C98C724C8875A00B6B527 /* OpenGL_ES_Demos */,
 				F41C98C624C8875A00B6B527 /* Products */,
+				7481189608A95D4D0C7E1B99 /* Pods */,
+				7E51D76C09724B3166A8A187 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +238,9 @@
 		F427E41B24DE8F2A00D2772C /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				F427E44D24E2D94200D2772C /* Mosaic */,
+				F427E44824E2D7DA00D2772C /* Reversal */,
+				F427E44324E2BFD400D2772C /* Gray */,
 				F427E43E24DF009A00D2772C /* Filter_06 */,
 				F427E43924DEFE7900D2772C /* Filter_09 */,
 				F427E43224DEF36700D2772C /* Filter_04 */,
@@ -275,6 +314,33 @@
 			path = Filter_06;
 			sourceTree = "<group>";
 		};
+		F427E44324E2BFD400D2772C /* Gray */ = {
+			isa = PBXGroup;
+			children = (
+				F427E44424E2BFF700D2772C /* Gray_filter.vsh */,
+				F427E44624E2C00500D2772C /* Gray_filter.fsh */,
+			);
+			path = Gray;
+			sourceTree = "<group>";
+		};
+		F427E44824E2D7DA00D2772C /* Reversal */ = {
+			isa = PBXGroup;
+			children = (
+				F427E44924E2D7F600D2772C /* Reversal.vsh */,
+				F427E44B24E2D7FD00D2772C /* Reversal.fsh */,
+			);
+			path = Reversal;
+			sourceTree = "<group>";
+		};
+		F427E44D24E2D94200D2772C /* Mosaic */ = {
+			isa = PBXGroup;
+			children = (
+				F427E44E24E2D95000D2772C /* Mosaic.vsh */,
+				F427E45024E2D95D00D2772C /* Mosaic.fsh */,
+			);
+			path = Mosaic;
+			sourceTree = "<group>";
+		};
 		FF7AD58924D92E0800B1B23B /* Demo4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +374,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F41C98DE24C8875E00B6B527 /* Build configuration list for PBXNativeTarget "OpenGL_ES_Demos" */;
 			buildPhases = (
+				0865FB80F1EE39CD61DEB39D /* [CP] Check Pods Manifest.lock */,
 				F41C98C124C8875A00B6B527 /* Sources */,
 				F41C98C224C8875A00B6B527 /* Frameworks */,
 				F41C98C324C8875A00B6B527 /* Resources */,
@@ -364,26 +431,57 @@
 				F427E42C24DEE21E00D2772C /* Filter_02.fsh in Resources */,
 				F427E41724DD9D9F00D2772C /* ZZPointParticleShader.vsh in Resources */,
 				F427E43124DEEA0800D2772C /* Filter_03.fsh in Resources */,
+				F427E44524E2BFF700D2772C /* Gray_filter.vsh in Resources */,
 				F41C98D824C8875E00B6B527 /* LaunchScreen.storyboard in Resources */,
 				F427E43D24DEFEA100D2772C /* Filter_09.fsh in Resources */,
+				F427E44A24E2D7F600D2772C /* Reversal.vsh in Resources */,
 				F427E43B24DEFE9600D2772C /* Filter_09.vsh in Resources */,
 				F427E44224DF00B900D2772C /* Filter_06.fsh in Resources */,
 				FF7AD59C24D9382600B1B23B /* shaderf.glsl in Resources */,
 				F427E43424DEF37700D2772C /* Filter_04.vsh in Resources */,
+				F427E45124E2D95D00D2772C /* Mosaic.fsh in Resources */,
 				F427E41924DD9DAC00D2772C /* ZZPointParticleShader.fsh in Resources */,
 				FF7AD59A24D9381400B1B23B /* shaderv.glsl in Resources */,
 				F41C98E924D06C2800B6B527 /* shaderv.vsh in Resources */,
 				F427E42024DE8F6500D2772C /* Normal.fsh in Resources */,
+				F427E44F24E2D95000D2772C /* Mosaic.vsh in Resources */,
 				F41C98D524C8875E00B6B527 /* Assets.xcassets in Resources */,
 				F41C98EB24D06C3900B6B527 /* shaderf.fsh in Resources */,
 				F427E41E24DE8F5900D2772C /* Normal.vsh in Resources */,
+				F427E44C24E2D7FD00D2772C /* Reversal.fsh in Resources */,
 				F427E43624DEF38F00D2772C /* Filter_04.fsh in Resources */,
 				F41C98D324C8875A00B6B527 /* Main.storyboard in Resources */,
+				F427E44724E2C00500D2772C /* Gray_filter.fsh in Resources */,
 				FF7AD58424CBFE8500B1B23B /* jj.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0865FB80F1EE39CD61DEB39D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenGL_ES_Demos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F41C98C124C8875A00B6B527 /* Sources */ = {
@@ -543,6 +641,7 @@
 		};
 		F41C98DF24C8875E00B6B527 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 956C4659255B3B805DC7D0A7 /* Pods-OpenGL_ES_Demos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -561,6 +660,7 @@
 		};
 		F41C98E024C8875E00B6B527 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54B915E0EE029D244137420A /* Pods-OpenGL_ES_Demos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
