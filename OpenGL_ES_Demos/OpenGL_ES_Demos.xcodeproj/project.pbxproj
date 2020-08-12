@@ -45,6 +45,8 @@
 		F427E44C24E2D7FD00D2772C /* Reversal.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E44B24E2D7FD00D2772C /* Reversal.fsh */; };
 		F427E44F24E2D95000D2772C /* Mosaic.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E44E24E2D95000D2772C /* Mosaic.vsh */; };
 		F427E45124E2D95D00D2772C /* Mosaic.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E45024E2D95D00D2772C /* Mosaic.fsh */; };
+		F427E45424E43DBB00D2772C /* Mosaic2.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E45324E43DBB00D2772C /* Mosaic2.vsh */; };
+		F427E45624E43DC700D2772C /* Mosaic2.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E45524E43DC700D2772C /* Mosaic2.fsh */; };
 		FF7AD58424CBFE8500B1B23B /* jj.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF7AD58324CBFE8500B1B23B /* jj.jpg */; };
 		FF7AD58C24D92E2800B1B23B /* Demo4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD58B24D92E2800B1B23B /* Demo4ViewController.m */; };
 		FF7AD58F24D92E3700B1B23B /* Demo4View.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD58E24D92E3700B1B23B /* Demo4View.m */; };
@@ -107,6 +109,8 @@
 		F427E44B24E2D7FD00D2772C /* Reversal.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Reversal.fsh; sourceTree = "<group>"; };
 		F427E44E24E2D95000D2772C /* Mosaic.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Mosaic.vsh; sourceTree = "<group>"; };
 		F427E45024E2D95D00D2772C /* Mosaic.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Mosaic.fsh; sourceTree = "<group>"; };
+		F427E45324E43DBB00D2772C /* Mosaic2.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Mosaic2.vsh; sourceTree = "<group>"; };
+		F427E45524E43DC700D2772C /* Mosaic2.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Mosaic2.fsh; sourceTree = "<group>"; };
 		FABF93834FFB61D6D07CBFFE /* Pods_OpenGL_ES_Demos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenGL_ES_Demos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7AD58324CBFE8500B1B23B /* jj.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jj.jpg; sourceTree = "<group>"; };
 		FF7AD58A24D92E2800B1B23B /* Demo4ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo4ViewController.h; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 		F427E41B24DE8F2A00D2772C /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				F427E45224E43DA100D2772C /* Mosaic2 */,
 				F427E44D24E2D94200D2772C /* Mosaic */,
 				F427E44824E2D7DA00D2772C /* Reversal */,
 				F427E44324E2BFD400D2772C /* Gray */,
@@ -341,6 +346,15 @@
 			path = Mosaic;
 			sourceTree = "<group>";
 		};
+		F427E45224E43DA100D2772C /* Mosaic2 */ = {
+			isa = PBXGroup;
+			children = (
+				F427E45324E43DBB00D2772C /* Mosaic2.vsh */,
+				F427E45524E43DC700D2772C /* Mosaic2.fsh */,
+			);
+			path = Mosaic2;
+			sourceTree = "<group>";
+		};
 		FF7AD58924D92E0800B1B23B /* Demo4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +439,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F427E45424E43DBB00D2772C /* Mosaic2.vsh in Resources */,
 				F427E44024DF00AE00D2772C /* Filter_06.vsh in Resources */,
 				F427E42F24DEE9FD00D2772C /* Filter_03.vsh in Resources */,
 				F427E42A24DEE21200D2772C /* Filter_02.vsh in Resources */,
@@ -432,6 +447,7 @@
 				F427E41724DD9D9F00D2772C /* ZZPointParticleShader.vsh in Resources */,
 				F427E43124DEEA0800D2772C /* Filter_03.fsh in Resources */,
 				F427E44524E2BFF700D2772C /* Gray_filter.vsh in Resources */,
+				F427E45624E43DC700D2772C /* Mosaic2.fsh in Resources */,
 				F41C98D824C8875E00B6B527 /* LaunchScreen.storyboard in Resources */,
 				F427E43D24DEFEA100D2772C /* Filter_09.fsh in Resources */,
 				F427E44A24E2D7F600D2772C /* Reversal.vsh in Resources */,

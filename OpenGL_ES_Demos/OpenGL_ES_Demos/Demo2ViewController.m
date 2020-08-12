@@ -19,7 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self changeN:5 startNum:100 endNum:1000];
 }
+- (void)changeN:(int)n startNum:(int)start endNum:(int)end
+{
+    for(int i = start;i<500;i++){
+        NSLog(@"result == %d",i % n);
+    }
+}
+
 - (IBAction)btnClick:(UIButton *)sender {
     
 //    Demo3ViewController *demo3 = [[Demo3ViewController alloc]init];
