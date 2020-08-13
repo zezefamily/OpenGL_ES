@@ -83,28 +83,24 @@ typedef struct {
 }
 - (void)timeAction
 {
-//    if(self.startTimeInterval == 0){
-//        self.startTimeInterval = self.displayLink.timestamp;
-//    }
+    if(self.startTimeInterval == 0){
+        self.startTimeInterval = self.displayLink.timestamp;
+    }
     //使用program
-//    glUseProgram(self.program);
+    glUseProgram(self.program);
     //绑定buffer
-//    glBindBuffer(GL_ARRAY_BUFFER, self.vertixBuffer);
-//    //传入时间
-//    GLfloat currentTime = self.displayLink.timestamp - self.startTimeInterval;
-//    GLuint time = glGetUniformLocation(self.program, "Time");
-//    glUniform1f(time, currentTime);
+    glBindBuffer(GL_ARRAY_BUFFER, self.vertixBuffer);
+    //传入时间
+    GLfloat currentTime = self.displayLink.timestamp - self.startTimeInterval;
+    GLuint time = glGetUniformLocation(self.program, "Time");
+    glUniform1f(time, currentTime);
     //清除画布
-//    glClear(GL_COLOR_BUFFER_BIT);
-//    glClearColor(1, 1, 1, 1);
-//    //重绘
-//    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-//    //渲染到屏幕上
-//    [self.context presentRenderbuffer:GL_RENDERBUFFER];
-    int a = (int)self.displayLink.timestamp % 5;
-    NSLog(@"a == %d",a);
-    
-    
+    glClear(GL_COLOR_BUFFER_BIT);
+    glClearColor(1, 1, 1, 1);
+    //重绘
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    //渲染到屏幕上
+    [self.context presentRenderbuffer:GL_RENDERBUFFER];
 }
 
 - (void)loadGLAndFliter
@@ -126,11 +122,11 @@ typedef struct {
     float width = CGImageGetWidth(imgRef);
     float height = CGImageGetHeight(imgRef);
     float scaleWH = width/height;
-    float layerW = self.view.frame.size.width - 220;
+    float layerW = self.view.frame.size.width - 100;
     float layerH = layerW/(scaleWH);
     //CAEAGLLayer
     CAEAGLLayer *layer = [CAEAGLLayer layer];
-    layer.frame = CGRectMake((self.view.frame.size.width - layerW)/2, 30, layerW,layerH);
+    layer.frame = CGRectMake((self.view.frame.size.width - layerW)/2, (self.view.frame.size.height - 90 - layerH)/2, layerW,layerH);
     layer.backgroundColor = [UIColor greenColor].CGColor;
     layer.contentsScale = [UIScreen mainScreen].scale;
     [self.view.layer addSublayer:layer];
@@ -311,16 +307,24 @@ typedef struct {
 - (void)loadUI
 {
     self.view.backgroundColor = [UIColor blackColor];
-    ZZSegmentControl *segmentControl = [[ZZSegmentControl alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 80, self.view.frame.size.width, 80) actions:@[@"原始图",@"二分图",@"三分图",@"四分图",@"六分图",@"九分图",@"灰度",@"翻转",@"马赛克1",@"马赛克2"]];
+    ZZSegmentControl *segmentControl = [[ZZSegmentControl alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 80, self.view.frame.size.width, 80) actions:@[@"原始图",@"二分图",@"三分图",@"四分图",@"六分图",@"九分图",@"灰度",@"翻转",@"马赛克1",@"马赛克2",@"马赛克3",@"缩放",@"出窍"]];
     segmentControl.delegate = self;
     [self.view addSubview:segmentControl];
 }
 - (void)itemDidSelectedWithIndex:(NSInteger)index
 {
     NSLog(@"index == %ld",index);
-    NSArray *filterArr = @[@"Normal",@"Filter_02",@"Filter_03",@"Filter_04",@"Filter_06",@"Filter_09",@"Gray_filter",@"Reversal",@"Mosaic",@"Mosaic2"];
+    NSArray *filterArr = @[@"Normal",@"Filter_02",@"Filter_03",@"Filter_04",@"Filter_06",@"Filter_09",@"Gray_filter",@"Reversal",@"Mosaic",@"Mosaic2",@"Mosaic3",@"Scale",@"SoulOut"];
     [self setupShaderProgramWithName:filterArr[index]];
-    [self render];
+    if(index < 11){
+        if(self.displayLink){
+            [self.displayLink invalidate];
+            self.displayLink = nil;
+        }
+        [self render];
+    }else{
+        [self startFliterAnimation];
+    }
 }
 
 

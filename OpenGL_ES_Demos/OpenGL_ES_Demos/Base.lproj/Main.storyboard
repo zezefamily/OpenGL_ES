@@ -39,12 +39,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="V4h-PN-SEU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Vk-1c-BRV"/>
                             <constraint firstItem="LvF-3Q-2sS" firstAttribute="top" secondItem="V4h-PN-SEU" secondAttribute="bottom" constant="13" id="E0k-rP-fNG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LvF-3Q-2sS" secondAttribute="trailing" constant="184" id="I0W-Hk-7K6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V4h-PN-SEU" secondAttribute="trailing" constant="184" id="Iyw-gs-pg2"/>
                             <constraint firstItem="V4h-PN-SEU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="106" id="RwT-mr-yq2"/>
-                            <constraint firstItem="LvF-3Q-2sS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="184" id="Sbz-eh-8hC"/>
-                            <constraint firstItem="V4h-PN-SEU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="184" id="iKj-Vu-k0i"/>
+                            <constraint firstItem="LvF-3Q-2sS" firstAttribute="centerX" secondItem="V4h-PN-SEU" secondAttribute="centerX" id="t5A-h4-qRG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

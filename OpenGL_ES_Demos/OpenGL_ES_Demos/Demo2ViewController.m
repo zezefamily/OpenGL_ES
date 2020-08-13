@@ -19,7 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self changeN:5 startNum:100 endNum:1000];
+//    [self changeN:5 startNum:100 endNum:1000];
+//    [self test];
+    
 }
 - (void)changeN:(int)n startNum:(int)start endNum:(int)end
 {
@@ -27,6 +29,30 @@
         NSLog(@"result == %d",i % n);
     }
 }
+
+- (void)test
+{
+    static double radius = 0;
+    if(radius <= 720.0){
+        double result = sin([self angleToRadian:radius]);
+        NSLog(@"sin(%f) == %f",radius,result);
+        radius = radius + 45.0;
+        [self test];
+    }
+}
+
+//角度转弧度 角度：angle 弧度：radian
+- (double)angleToRadian:(double)angle
+{
+    return angle * (M_PI / 180.0);
+}
+//弧度转角度
+- (double)radianToAngle:(double)radian
+{
+    return radian * (180.0 / M_PI);
+}
+
+
 
 - (IBAction)btnClick:(UIButton *)sender {
     

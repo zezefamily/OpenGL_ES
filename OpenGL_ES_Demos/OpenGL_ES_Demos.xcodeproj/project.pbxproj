@@ -47,6 +47,12 @@
 		F427E45124E2D95D00D2772C /* Mosaic.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E45024E2D95D00D2772C /* Mosaic.fsh */; };
 		F427E45424E43DBB00D2772C /* Mosaic2.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E45324E43DBB00D2772C /* Mosaic2.vsh */; };
 		F427E45624E43DC700D2772C /* Mosaic2.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E45524E43DC700D2772C /* Mosaic2.fsh */; };
+		F427E45924E5705800D2772C /* Mosaic3.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E45824E5705800D2772C /* Mosaic3.vsh */; };
+		F427E45B24E5706D00D2772C /* Mosaic3.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E45A24E5706D00D2772C /* Mosaic3.fsh */; };
+		F427E45E24E577F600D2772C /* Scale.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E45D24E577F600D2772C /* Scale.vsh */; };
+		F427E46024E57D6E00D2772C /* Scale.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E45F24E57D6E00D2772C /* Scale.fsh */; };
+		F427E46324E57FEF00D2772C /* SoulOut.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E46224E57FEF00D2772C /* SoulOut.vsh */; };
+		F427E46524E57FFB00D2772C /* SoulOut.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F427E46424E57FFB00D2772C /* SoulOut.fsh */; };
 		FF7AD58424CBFE8500B1B23B /* jj.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF7AD58324CBFE8500B1B23B /* jj.jpg */; };
 		FF7AD58C24D92E2800B1B23B /* Demo4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD58B24D92E2800B1B23B /* Demo4ViewController.m */; };
 		FF7AD58F24D92E3700B1B23B /* Demo4View.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AD58E24D92E3700B1B23B /* Demo4View.m */; };
@@ -59,7 +65,7 @@
 /* Begin PBXFileReference section */
 		54B915E0EE029D244137420A /* Pods-OpenGL_ES_Demos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenGL_ES_Demos.release.xcconfig"; path = "Target Support Files/Pods-OpenGL_ES_Demos/Pods-OpenGL_ES_Demos.release.xcconfig"; sourceTree = "<group>"; };
 		956C4659255B3B805DC7D0A7 /* Pods-OpenGL_ES_Demos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenGL_ES_Demos.debug.xcconfig"; path = "Target Support Files/Pods-OpenGL_ES_Demos/Pods-OpenGL_ES_Demos.debug.xcconfig"; sourceTree = "<group>"; };
-		F41C98C524C8875A00B6B527 /* OpenGL_ES_Demos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGL_ES_Demos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F41C98C524C8875A00B6B527 /* OpenGL滤镜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenGL滤镜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41C98C824C8875A00B6B527 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F41C98C924C8875A00B6B527 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F41C98CB24C8875A00B6B527 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +117,12 @@
 		F427E45024E2D95D00D2772C /* Mosaic.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Mosaic.fsh; sourceTree = "<group>"; };
 		F427E45324E43DBB00D2772C /* Mosaic2.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Mosaic2.vsh; sourceTree = "<group>"; };
 		F427E45524E43DC700D2772C /* Mosaic2.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Mosaic2.fsh; sourceTree = "<group>"; };
+		F427E45824E5705800D2772C /* Mosaic3.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Mosaic3.vsh; sourceTree = "<group>"; };
+		F427E45A24E5706D00D2772C /* Mosaic3.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Mosaic3.fsh; sourceTree = "<group>"; };
+		F427E45D24E577F600D2772C /* Scale.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Scale.vsh; sourceTree = "<group>"; };
+		F427E45F24E57D6E00D2772C /* Scale.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Scale.fsh; sourceTree = "<group>"; };
+		F427E46224E57FEF00D2772C /* SoulOut.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = SoulOut.vsh; sourceTree = "<group>"; };
+		F427E46424E57FFB00D2772C /* SoulOut.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = SoulOut.fsh; sourceTree = "<group>"; };
 		FABF93834FFB61D6D07CBFFE /* Pods_OpenGL_ES_Demos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenGL_ES_Demos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7AD58324CBFE8500B1B23B /* jj.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jj.jpg; sourceTree = "<group>"; };
 		FF7AD58A24D92E2800B1B23B /* Demo4ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo4ViewController.h; sourceTree = "<group>"; };
@@ -169,7 +181,7 @@
 		F41C98C624C8875A00B6B527 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F41C98C524C8875A00B6B527 /* OpenGL_ES_Demos.app */,
+				F41C98C524C8875A00B6B527 /* OpenGL滤镜.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,6 +254,9 @@
 		F427E41B24DE8F2A00D2772C /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				F427E46124E57FD700D2772C /* SoulOut */,
+				F427E45C24E577D700D2772C /* Scale */,
+				F427E45724E5703300D2772C /* Mosaic3 */,
 				F427E45224E43DA100D2772C /* Mosaic2 */,
 				F427E44D24E2D94200D2772C /* Mosaic */,
 				F427E44824E2D7DA00D2772C /* Reversal */,
@@ -355,6 +370,33 @@
 			path = Mosaic2;
 			sourceTree = "<group>";
 		};
+		F427E45724E5703300D2772C /* Mosaic3 */ = {
+			isa = PBXGroup;
+			children = (
+				F427E45824E5705800D2772C /* Mosaic3.vsh */,
+				F427E45A24E5706D00D2772C /* Mosaic3.fsh */,
+			);
+			path = Mosaic3;
+			sourceTree = "<group>";
+		};
+		F427E45C24E577D700D2772C /* Scale */ = {
+			isa = PBXGroup;
+			children = (
+				F427E45D24E577F600D2772C /* Scale.vsh */,
+				F427E45F24E57D6E00D2772C /* Scale.fsh */,
+			);
+			path = Scale;
+			sourceTree = "<group>";
+		};
+		F427E46124E57FD700D2772C /* SoulOut */ = {
+			isa = PBXGroup;
+			children = (
+				F427E46224E57FEF00D2772C /* SoulOut.vsh */,
+				F427E46424E57FFB00D2772C /* SoulOut.fsh */,
+			);
+			path = SoulOut;
+			sourceTree = "<group>";
+		};
 		FF7AD58924D92E0800B1B23B /* Demo4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,7 +441,7 @@
 			);
 			name = OpenGL_ES_Demos;
 			productName = OpenGL_ES_Demos;
-			productReference = F41C98C524C8875A00B6B527 /* OpenGL_ES_Demos.app */;
+			productReference = F41C98C524C8875A00B6B527 /* OpenGL滤镜.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -439,6 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F427E46024E57D6E00D2772C /* Scale.fsh in Resources */,
 				F427E45424E43DBB00D2772C /* Mosaic2.vsh in Resources */,
 				F427E44024DF00AE00D2772C /* Filter_06.vsh in Resources */,
 				F427E42F24DEE9FD00D2772C /* Filter_03.vsh in Resources */,
@@ -446,12 +489,17 @@
 				F427E42C24DEE21E00D2772C /* Filter_02.fsh in Resources */,
 				F427E41724DD9D9F00D2772C /* ZZPointParticleShader.vsh in Resources */,
 				F427E43124DEEA0800D2772C /* Filter_03.fsh in Resources */,
+				F427E45924E5705800D2772C /* Mosaic3.vsh in Resources */,
 				F427E44524E2BFF700D2772C /* Gray_filter.vsh in Resources */,
+				F427E45B24E5706D00D2772C /* Mosaic3.fsh in Resources */,
 				F427E45624E43DC700D2772C /* Mosaic2.fsh in Resources */,
 				F41C98D824C8875E00B6B527 /* LaunchScreen.storyboard in Resources */,
 				F427E43D24DEFEA100D2772C /* Filter_09.fsh in Resources */,
 				F427E44A24E2D7F600D2772C /* Reversal.vsh in Resources */,
+				F427E46324E57FEF00D2772C /* SoulOut.vsh in Resources */,
 				F427E43B24DEFE9600D2772C /* Filter_09.vsh in Resources */,
+				F427E46524E57FFB00D2772C /* SoulOut.fsh in Resources */,
+				F427E45E24E577F600D2772C /* Scale.vsh in Resources */,
 				F427E44224DF00B900D2772C /* Filter_06.fsh in Resources */,
 				FF7AD59C24D9382600B1B23B /* shaderf.glsl in Resources */,
 				F427E43424DEF37700D2772C /* Filter_04.vsh in Resources */,
@@ -669,7 +717,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ios.OpenGL-ES-Demos";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "OpenGL滤镜";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -688,7 +736,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ios.OpenGL-ES-Demos";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "OpenGL滤镜";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

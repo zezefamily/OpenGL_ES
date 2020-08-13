@@ -2,7 +2,7 @@ precision highp float;
 uniform sampler2D Texture;
 varying vec2 TextureCoordsVarying;
 
-const float mosaicSize = 0.013;
+const float mosaicSize = 0.03;
 
 void main()
 {
